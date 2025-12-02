@@ -1,0 +1,316 @@
+:root {
+  --accent: #0b5cff;
+  --muted: #666;
+  --border: #e0e0e0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+  background: #f9f9f9;
+  margin: 0;
+}
+.container {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 0 18px;
+}
+h1 {
+  margin: 0 0 24px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.controls label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.controls input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+.left,
+.right {
+  flex: 1;
+}
+
+/* Logos */
+.logos {
+  margin: 16px 0;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.logos label {
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+/* Items Editor */
+.items {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.items th {
+  text-align: left;
+  font-size: 0.85em;
+  color: var(--muted);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.items td {
+  padding: 8px 4px;
+}
+.items input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.items-actions {
+  margin-top: 12px;
+}
+
+/* Buttons */
+button {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+button:hover {
+  opacity: 0.9;
+}
+button.remove {
+  background: #ff4444;
+  padding: 6px 10px;
+  font-size: 0.9em;
+}
+
+/* Summary Editor */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.totals div {
+  margin: 4px 0;
+  text-align: right;
+}
+.total {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+/* PREVIEW STYLES */
+.preview {
+  background: #fff;
+  padding: 48px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 32px;
+  border-radius: 4px;
+  min-height: 800px; /* A4-ish feel */
+}
+
+.invoice-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 48px;
+  border-bottom: 2px solid #f4f4f4;
+  padding-bottom: 24px;
+}
+
+.summit-logo {
+  height: 120px;
+  object-fit: contain;
+}
+
+.head-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.meta div:first-child {
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #222;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-bottom: 4px;
+}
+.meta div:not(:first-child) {
+  color: #666;
+  font-size: 1em;
+}
+
+.logo-row img {
+  height: 40px;
+  margin-left: 12px;
+  opacity: 0.9;
+}
+
+/* Bill Info */
+.bill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.bill-from,
+.bill-to {
+  width: 45%;
+}
+.bill-info .label {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.bill-info .value {
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Table */
+.items-preview {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+.items-preview th {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 2px solid #222;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #222;
+  font-weight: 700;
+}
+.items-preview td {
+  padding: 16px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+  color: #444;
+}
+.items-preview td strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.items-preview .th-qty,
+.items-preview .th-price,
+.items-preview .th-amount,
+.items-preview td:nth-child(3),
+.items-preview td:nth-child(4),
+.items-preview td:nth-child(5) {
+  text-align: right;
+}
+.items-preview td:nth-child(3) {
+  text-align: center;
+}
+.th-qty {
+  text-align: center !important;
+}
+
+/* Footer / Totals */
+.invoice-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.totals-box {
+  width: 300px;
+}
+.totals-box .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: #555;
+}
+.totals-box .row.total {
+  border-top: 2px solid #222;
+  margin-top: 12px;
+  padding-top: 16px;
+  font-weight: 700;
+  font-size: 1.4em;
+  color: #000;
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+  body {
+    margin: 0;
+    background: #fff;
+  }
+  main.container {
+    max-width: none;
+    margin: 50px;
+    padding: 0;
+  }
+  .controls,
+  .actions,
+  .items-actions,
+  .logos,
+  .items,
+  .summary,
+  h1,
+  hr {
+    display: none;
+  }
+  .preview {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+}

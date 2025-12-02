@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>IEDC Summit 2025 — Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>IEDC Summit 2025 — Invoice Generator</h1>
+
+      <section class="controls">
+        <div class="left">
+          <label>Invoice #: <input id="invoiceNumber" type="text" /></label>
+          <label>Date: <input id="invoiceDate" type="date" /></label>
+        </div>
+        <div class="right">
+          <label
+            >From: <input id="from" placeholder="Organiser / Billing Name"
+          /></label>
+          <label
+            >To: <input id="to" placeholder="Client / Participant"
+          /></label>
+        </div>
+      </section>
+
+      <section class="items">
+        <table id="itemsTable">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Qty</th>
+              <th>Price</th>
+              <th>Amount</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="itemsBody"></tbody>
+        </table>
+        <div class="items-actions">
+          <button id="addItem">Add Item</button>
+        </div>
+      </section>
+
+      <section class="summary">
+        <label
+          >Tax (%):
+          <input id="taxRate" type="number" value="0" min="0" step="0.1"
+        /></label>
+        <div class="totals">
+          <div>Subtotal: <span id="subtotal">0.00</span></div>
+          <div>Tax: <span id="taxAmount">0.00</span></div>
+          <div class="total">Total: <span id="totalAmount">0.00</span></div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="render">Render Preview</button>
+        <button id="print">Print / Save PDF</button>
+      </section>
+
+      <hr />
+
+      <section id="preview" class="preview">
+        <!-- dynamically filled invoice preview -->
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
