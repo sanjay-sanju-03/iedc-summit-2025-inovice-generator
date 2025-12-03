@@ -92,6 +92,7 @@ function renderPreview() {
     qs("#invoiceDate").value || new Date().toISOString().slice(0, 10);
   const from = qs("#from").value || "IEDC Summit 2025";
   const to = qs("#to").value || "";
+  const gstNumber = qs("#gstNumber").value || "";
 
   // Hardcoded logos as requested
   const logos = [
@@ -139,6 +140,7 @@ function renderPreview() {
     <div class="bill-to">
       <div class="label">Bill To:</div>
       <div class="value">${escapeHtml(to).replace(/\n/g, "<br>")}</div>
+      ${gstNumber ? `<div class="gst-info"><strong>GST Number:</strong> ${escapeHtml(gstNumber)}</div>` : ''}
     </div>
   </div>`;
 
@@ -178,6 +180,20 @@ function renderPreview() {
       <div class="row total">
         <span class="label">Total:</span>
         <span class="value">${totalAmountEl.textContent}</span>
+      </div>
+    </div>
+  </div>`;
+
+  html += `<div class="signature-section">
+    <div class="seal-box">
+      <img src="logos/iedc-seal.png" alt="IEDC Seal" class="seal-img" onerror="this.style.display='none'">
+    </div>
+    <div class="signature-box">
+      <img src="logos/signature.png" alt="Signature" class="signature-img" onerror="this.style.display='none'">
+      <div class="signature-line"></div>
+      <div class="designation-info">
+        <div class="designation-name">Dr. Sarith Divakar M</div>
+        <div class="designation-title">Convenor, IEDC Summit 2025</div>
       </div>
     </div>
   </div>`;
